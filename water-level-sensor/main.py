@@ -1,11 +1,11 @@
 import time
 import os
-from resources.driver_base import DriverBase
+from driver import Driver
 
 toggle = True
-gpio_pin = XX
+pin = 1 ## GPIO 18
 
-driver = DriverBase(gpio_pin)
+driver = Driver(pin)
 
 try:
     while True:
@@ -15,8 +15,8 @@ try:
 
         toggle = not toggle
         print()
-        print("Press Cntr+C in terminal to exit. " + ("[|]" if toggle else "[-]"))
-        time.sleep(1) 
+        print("Press Cntr+C in terminal to exit. " + ("[|]" if toggle else "[-]"))        
+        time.sleep(1)
 
 ## Continue with loop until Cntr+C is pressed in terminal
 except KeyboardInterrupt:
