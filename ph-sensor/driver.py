@@ -11,6 +11,7 @@ from ADS1115 import PGA, Channel, ConverterMode, ADS1115
 class Driver(DriverBase):
     converter_mode = None
     channel = None
+    offset = -4.21
 
     def __init__(self):
 
@@ -43,14 +44,12 @@ class Driver(DriverBase):
         reading = ph['r']
         return reading
 
-    def read_value(self):        
-        return self.convert_raw(self.read_voltage())
+    def read_value(self):
+        raw_value = self.read_voltage()
+        return self.convert_raw(raw_value)
 
     def is_available(self):
         reading = -1
-        
-        if AppConfig().is_ph_enabled_sensor() is False:
-            return False
 
         try:
             reading = self.read_value()
