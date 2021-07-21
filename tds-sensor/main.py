@@ -1,11 +1,9 @@
 import time
 import os
-from resources.driver_base import DriverBase
+from driver import Driver
 
 toggle = True
-gpio_pin = XX
-
-driver = DriverBase(gpio_pin)
+driver = Driver()
 
 try:
     while True:

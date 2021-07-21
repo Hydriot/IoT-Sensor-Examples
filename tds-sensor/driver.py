@@ -41,9 +41,6 @@ class Driver(DriverBase):
 
     def is_available(self):
         reading = -1
-        
-        if AppConfig().is_tds_enabled_sensor() is False:
-            return False
 
         try:
             reading = self.read_value()
@@ -58,4 +55,4 @@ class Driver(DriverBase):
         return False
 
     def display(self, value):
-        print(f"Total Disolvable Solids (TDS) - [{value}]")
+        print(f"Total Dissolvable Solids (TDS) - [{value}]")
