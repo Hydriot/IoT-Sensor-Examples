@@ -1,7 +1,7 @@
 # Liquid Level Sensor - CQRobotics #
 Measure if the sensor is in contact with liquid
 
-![](https://raw.githubusercontent.com/Hydriot/IoT-Sensor-Examples/main/XXXX/sensor.jpg)
+![](https://raw.githubusercontent.com/Hydriot/IoT-Sensor-Examples/main/water-level-sensor/resources/sensor.jpg)
 
 
 ## Resources ##
@@ -18,7 +18,7 @@ Measure if the sensor is in contact with liquid
 
 ### Connect the sensor with the Raspberry Pi ###
 
-![](https://raw.githubusercontent.com/Hydriot/IoT-Sensor-Examples/main/connection.jpg)
+![](https://raw.githubusercontent.com/Hydriot/IoT-Sensor-Examples/main/water-level-sensor/resources/connection.jpg)
 
 ### Install WiringPI ###
 
