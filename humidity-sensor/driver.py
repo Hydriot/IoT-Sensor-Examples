@@ -1,6 +1,7 @@
 import time
 import RPi.GPIO
-import adafruit_dht
+## import adafruit_dht
+import Adafruit_DHT as dht
 import sys
 
 from resources.driver_base import DriverBase
@@ -10,6 +11,12 @@ from resources.driver_base import DriverBase
 ## https://github.com/adafruit/Adafruit_CircuitPython_DHT
 ## https://pypi.org/project/adafruit-circuitpython-dht/
 
+## Manuall install
+## git clone https://github.com/adafruit/Adafruit_Python_DHT.git
+## cd Adafruit_Python_DHT
+## sudo apt-get upgrade
+## sudo apt-get install build-essential python-dev python-openssl
+## sudo python3 setup.py install
 
 ## python -m pip install adafruit-circuitpython-dht
 ## python -m pip install adafruit-circuitpython-lis3dh
@@ -19,7 +26,7 @@ from resources.driver_base import DriverBase
 
 class Driver(DriverBase):
     pin = None
-    sensor = None
+    ## sensor = None
     last_humidity = None
     last_temperature = None
     
@@ -30,13 +37,13 @@ class Driver(DriverBase):
 
     def initialize(self):
         ## self.sensor = dht.DHT22
-        self.sensor = adafruit_dht.DHT22(self.pin)
+        ## self.sensor = adafruit_dht.DHT22(self.pin)
         pass
 
     def read_value(self):
-        # self.last_humidity, self.last_temperature = dht.read_retry(self.sensor, self.pin)        
-        self.last_humidity = self.sensor.humidity
-        self.last_temperature = self.sensor.temperature
+        self.last_humidity, self.last_temperature = dht.read_retry(dht.DHT22, self.pin)        
+        # self.last_humidity = self.sensor.humidity
+        # self.last_temperature = self.sensor.temperature
 
         return self.last_temperature
 
