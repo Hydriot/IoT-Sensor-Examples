@@ -1,5 +1,4 @@
 import time
-import RPi.GPIO
 ## import adafruit_dht
 import Adafruit_DHT as dht
 import sys
@@ -22,6 +21,7 @@ from resources.driver_base import DriverBase
 ## python -m pip install adafruit-circuitpython-lis3dh
 ## sudo python3 -m pip install libgpiod2
 ## sudo python -m pip install board --upgrade
+## sudo python3 -m pip install RPi.Gpio --upgrade
 
 
 class Driver(DriverBase):
