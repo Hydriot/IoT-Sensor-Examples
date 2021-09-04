@@ -3,7 +3,7 @@ import os
 from driver import Driver
 
 toggle = True
-pin = 1 ## GPIO 18
+pin = 4 ## GPIO 18
 
 driver = Driver(pin)
 
