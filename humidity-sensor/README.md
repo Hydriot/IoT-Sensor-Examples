@@ -27,6 +27,7 @@ Important
 Install Adafruit Manually (Try PIP first):
 
 ```console
-sudo python -m pip Adafruit_DHT
+python -m pip install adafruit_dht
+python -m pip install board
 ```
 
