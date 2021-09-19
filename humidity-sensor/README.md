@@ -24,14 +24,9 @@ Important
 
 
 ### Run the files ###
-
 Install Adafruit Manually (Try PIP first):
 
 ```console
-git clone https://github.com/adafruit/Adafruit_Python_DHT.git
-cd Adafruit_Python_DHT
-sudo apt-get upgrade
-sudo apt-get install build-essential python-dev python-openssl
-sudo python3 setup.py install
+sudo python -m pip Adafruit_DHT
 ```
 
