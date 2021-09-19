@@ -1,5 +1,4 @@
 import time
-## import adafruit_dht
 import Adafruit_DHT as dht
 import sys
 
@@ -23,7 +22,6 @@ from resources.driver_base import DriverBase
 ## sudo python -m pip install board --upgrade
 ## sudo python3 -m pip install RPi.Gpio --upgrade
 
-
 class Driver(DriverBase):
     pin = None
     ## sensor = None
@@ -40,30 +38,12 @@ class Driver(DriverBase):
         ## self.sensor = adafruit_dht.DHT22(self.pin)
         pass
 
-    def read_value(self):
-        self.last_humidity, self.last_temperature = dht.read_retry(dht.DHT22, self.pin)        
-        # self.last_humidity = self.sensor.humidity
-        # self.last_temperature = self.sensor.temperature
-
-        return self.last_temperature
-
-    def is_available(self):
-        reading = -1
-
-        try:
-            # TODO: If there is nothing it still reads as 0 need better mechanism
-            reading = self.read_value()
-        except:
-            e = sys.exc_info()[0]
-            print(f"Failed to read Temperature and Humidity. Error Details >> {e}")
-            return False
-        finally:
-            if reading > -1:
-                return True
-        
-        return False
+    def read_raw(self):
+        self.last_humidity, self.last_temperature = dht.read_retry(dht.DHT22, self.pin)
+        return self.last_humidity
 
     def display(self):
+        print("Reading Sensor Data...")
+        print()
         temp = self.read_value()
-
         print(f"Temperature [{temp}C] Humidity [{self.last_humidity}]")
