@@ -3,7 +3,7 @@ import os
 from driver import Driver
 
 toggle = True
-pin = 22 ## GPIO 25
+pin = 25 ## Pin 22 GPIO 25
 
 driver = Driver(pin)
 

@@ -6,7 +6,6 @@ import traceback
 class DriverBase(ABC):
     def __init__(self):
         self.initialize()
-        pass
 
     @abstractmethod
     def initialize(self):
