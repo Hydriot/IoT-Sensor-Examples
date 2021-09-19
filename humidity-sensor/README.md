@@ -24,10 +24,13 @@ Important
 
 
 ### Run the files ###
-Install Adafruit Manually (Try PIP first):
+Install Adafruit Manually (PIP One did not work for me)
 
 ```console
-python -m pip install Adafruit-DHT
-python -m pip install board
+cd /home/installers
+
+git clone https://github.com/adafruit/Adafruit_Python_DHT.git
+cd Adafruit_Python_DHT
+sudo python setup.py install
 ```
 
